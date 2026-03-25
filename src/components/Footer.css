@@ -1,0 +1,208 @@
+/**
+ * FOOTER STYLES
+ * =============
+ * Professional, informative footer with good UX
+ */
+
+.footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-200);
+  padding: var(--space-16) var(--space-4);
+  margin-top: var(--space-16);
+  border-top: 1px solid var(--color-gray-800);
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================================ */
+/* FOOTER SECTIONS */
+/* ============================================================================ */
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.footer-text {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-gray-400);
+  margin: 0;
+}
+
+/* ============================================================================ */
+/* FOOTER LINKS */
+/* ============================================================================ */
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  border-bottom: none;
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-regular);
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+  border-bottom: none;
+}
+
+/* ============================================================================ */
+/* FOOTER BOTTOM */
+/* ============================================================================ */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+.footer-bottom-right {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ============================================================================ */
+/* TRUST BADGES - Safety Signals */
+/* ============================================================================ */
+
+.footer-badges {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-gray-300);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.badge:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.badge-open::before,
+.badge-safe::before,
+.badge-free::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* ============================================================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================================================ */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .footer-badges {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-8) var(--space-4);
+    margin-top: var(--space-8);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+
+  .footer-badges {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .badge {
+    width: 100%;
+    justify-content: center;
+  }
+}

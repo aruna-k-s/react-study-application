@@ -1,0 +1,223 @@
+/**
+ * CODE BLOCK STYLES
+ * =================
+ * Consistent styling for code blocks across the application
+ * Handles folder structures, code snippets, and preformatted text
+ */
+
+.code-block-container {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  background: #1a1a2e;
+}
+
+.code-block-title {
+  background: rgba(0, 212, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00d4ff;
+  font-family: 'Courier New', monospace;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.code-block-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/**
+ * CORE CODE BLOCK STYLING
+ * =======================
+ */
+
+.code-block {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  background: #1a1a2e;
+  color: #00d4ff;
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  overflow-y: visible;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+
+  /* Critical for proper rendering */
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 2;
+  -moz-tab-size: 2;
+
+  /* Disable flex/grid collapse */
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.code-block code {
+  /* Reset inline code styling */
+  background: none;
+  color: #00d4ff;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/**
+ * CUSTOM SCROLLBAR
+ * ================
+ */
+
+.code-block::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+/**
+ * LANGUAGE-SPECIFIC STYLES
+ * ========================
+ */
+
+.code-block-text {
+  color: #00d4ff;
+}
+
+.code-block-javascript,
+.code-block-js {
+  color: #ffd700;
+}
+
+.code-block-typescript,
+.code-block-ts {
+  color: #3178c6;
+}
+
+.code-block-html {
+  color: #ff6b5b;
+}
+
+.code-block-css {
+  color: #56ccf2;
+}
+
+.code-block-json {
+  color: #ff9e64;
+}
+
+.code-block-bash,
+.code-block-shell {
+  color: #90ee90;
+}
+
+/**
+ * COPY BUTTON
+ * ===========
+ */
+
+.code-block-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.code-block-copy-btn:hover {
+  background: rgba(0, 212, 255, 0.3);
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.code-block-copy-btn:active {
+  transform: scale(0.95);
+}
+
+/**
+ * RESPONSIVE
+ * ==========
+ */
+
+@media (max-width: 768px) {
+  .code-block {
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .code-block-title {
+    padding: 0.6rem 0.875rem;
+    font-size: 0.8rem;
+  }
+
+  .code-block-copy-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .code-block {
+    padding: 0.875rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .code-block-title {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .code-block-copy-btn {
+    top: 0.4rem;
+    right: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/**
+ * INLINE CODE (WITHIN TEXT)
+ * =========================
+ * Keep separate from code blocks to avoid conflicts
+ */
+
+.inline-code {
+  background: rgba(0, 212, 255, 0.08);
+  color: #00d4ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  white-space: nowrap;
+}

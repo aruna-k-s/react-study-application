@@ -1,0 +1,51 @@
+/**
+ * RESPONSIVE LAYOUT STYLES
+ * ========================
+ */
+
+.responsive-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.layout-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Desktop layout (sidebar visible) */
+@media (min-width: 1024px) {
+  .responsive-layout {
+    --sidebar-compact-width: 60px;
+  }
+}
+
+/* Tablet layout */
+@media (max-width: 1023px) {
+  .layout-container {
+    position: relative;
+  }
+  
+  /* Sidebar overlays on tablet */
+  .collapsible-sidebar {
+    position: absolute;
+    height: 100%;
+    z-index: 100;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+  .responsive-layout {
+    --header-height: 52px;
+  }
+  
+  .collapsible-sidebar.compact {
+    display: none;
+  }
+}

@@ -1,0 +1,648 @@
+/**
+ * ============================================================================
+ * APP COMPONENT STYLES: App.css
+ * ============================================================================
+ * 
+ * Professional, student-friendly black & white theme
+ * Mobile-first responsive design
+ * Encourages exploration and builds trust
+ */
+
+/* ============================================================================ */
+/* IMPORT DESIGN SYSTEM */
+/* ============================================================================ */
+
+@import url('./styles/DesignSystem.css');
+
+/* ============================================================================ */
+/* ROOT LAYOUT */
+/* ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ============================================================================ */
+/* HEADER */
+/* ============================================================================ */
+
+.app-header {
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-sm);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-content {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+.header-logo {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.header-logo:hover {
+  background-color: var(--color-gray-100);
+  transform: translateY(-1px);
+}
+
+.logo-icon {
+  font-size: var(--font-size-2xl);
+  display: block;
+}
+
+.logo-text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.header-tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
+  font-weight: var(--font-weight-regular);
+}
+
+/* ============================================================================ */
+/* HAMBURGER MENU BUTTON */
+/* ============================================================================ */
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu:hover {
+  background-color: var(--color-gray-100);
+}
+
+.hamburger-menu:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-text);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+/* ============================================================================ */
+/* CONTENT WRAPPER & SIDEBAR BACKDROP */
+/* ============================================================================ */
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+}
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-dropdown) - 1);
+}
+
+/* ============================================================================ */
+/* SIDEBAR NAVIGATION */
+/* ============================================================================ */
+
+.sidebar-nav {
+  width: 260px;
+  background-color: var(--color-gray-50);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-3);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+  min-height: 0;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-tertiary);
+}
+
+.sidebar-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  padding: 0 var(--space-2);
+}
+
+.sidebar-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.category-section {
+  margin-bottom: var(--space-5);
+}
+
+.category-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-3);
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  min-height: 44px;
+}
+
+.category-header:hover {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.category-icon {
+  font-size: var(--font-size-lg);
+  display: block;
+  flex-shrink: 0;
+}
+
+.category-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-arrow {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.category-header.expanded .category-arrow {
+  transform: rotate(180deg);
+}
+
+.category-topics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-border-light);
+  margin-left: var(--space-2);
+}
+
+.sidebar-button {
+  width: 100%;
+  padding: var(--space-3) var(--space-3);
+  background-color: transparent;
+  border: 2px solid transparent;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.sidebar-button.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================================ */
+/* MAIN CONTENT AREA */
+/* ============================================================================ */
+
+.main-content {
+  flex: 1;
+  padding: var(--space-6) var(--space-6);
+  overflow-y: auto;
+  background-color: var(--color-white);
+  min-height: 0;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: var(--color-gray-50);
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-tertiary);
+}
+
+.module-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ============================================================================ */
+/* MODULE CONTENT STYLES */
+/* ============================================================================ */
+
+.hook-section {
+  padding: 0;
+}
+
+.hook-section h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.hook-subsection {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-black);
+}
+
+.hook-subsection h3 {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-3);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-4);
+}
+
+.explanation-box {
+  background: var(--color-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  border-left: 4px solid var(--color-gray-600);
+}
+
+.explanation-box h4 {
+  color: var(--color-text);
+  margin-top: 0;
+  font-size: var(--font-size-lg);
+}
+
+.demo-box {
+  background: var(--color-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  margin: var(--space-4) 0;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.demo-box h4 {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-black);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================================ */
+/* RESPONSIVE DESIGN - Tablet */
+/* ============================================================================ */
+
+@media (max-width: 1024px) {
+  .sidebar-nav {
+    width: 220px;
+    padding: var(--space-3) var(--space-2);
+  }
+
+  .main-content {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .hook-section h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .header-logo {
+    gap: var(--space-2);
+  }
+}
+
+/* ============================================================================ */
+/* RESPONSIVE DESIGN - Mobile */
+/* ============================================================================ */
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .app-layout {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - 60px);
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-3) var(--space-3);
+    z-index: var(--z-dropdown);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+    background-color: var(--color-white);
+  }
+
+  .sidebar-nav.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    order: 1;
+    padding: var(--space-4) var(--space-4);
+    max-height: 100%;
+    min-height: auto;
+  }
+
+  .app-header {
+    padding: var(--space-3) var(--space-3);
+    height: 50px;
+  }
+
+  .header-content {
+    gap: var(--space-2);
+  }
+
+  .logo-icon {
+    font-size: var(--font-size-lg);
+  }
+
+  .sidebar-title {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+  }
+
+  .category-header {
+    padding: var(--space-2) var(--space-1);
+    font-size: var(--font-size-sm);
+    min-height: 44px;
+  }
+
+  .sidebar-button {
+    font-size: var(--font-size-xs);
+    padding: var(--space-2) var(--space-2);
+    min-height: 44px;
+  }
+
+  .hook-section h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .hook-subsection {
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .demo-box {
+    padding: var(--space-4);
+  }
+
+  .module-container {
+    margin: 0;
+  }
+}
+
+/* ============================================================================ */
+/* RESPONSIVE DESIGN - Small Mobile */
+/* ============================================================================ */
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .app-header {
+    padding: var(--space-2) var(--space-3);
+    height: 50px;
+  }
+
+  .header-content {
+    gap: var(--space-2);
+  }
+
+  .logo-icon {
+    font-size: var(--font-size-lg);
+  }
+
+  .logo-text {
+    font-size: var(--font-size-sm);
+  }
+
+  .header-tagline {
+    display: none;
+  }
+
+  .sidebar-nav {
+    top: 50px;
+    max-height: calc(100vh - 50px);
+    padding: var(--space-2) var(--space-2);
+  }
+
+  .main-content {
+    padding: var(--space-3) var(--space-3);
+    max-height: 100%;
+  }
+
+  .hook-section h2 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-2);
+  }
+
+  .hook-subsection h3 {
+    font-size: var(--font-size-md);
+  }
+
+  .category-topics {
+    padding-left: var(--space-2);
+    margin-left: var(--space-1);
+  }
+
+  .explanation-box,
+  .demo-box {
+    padding: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-button {
+    font-size: var(--font-size-xs);
+    padding: var(--space-2) var(--space-2);
+    min-height: 44px;
+  }
+}
+
+/* ============================================================================ */
+/* ACCESSIBILITY & FOCUS STATES */
+/* ============================================================================ */
+
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+.sidebar-button:focus-visible {
+  outline-offset: 0;
+}
+
+/* ============================================================================ */
+/* ANIMATIONS */
+/* ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================================ */
+/* PRINT STYLES */
+/* ============================================================================ */
+
+@media print {
+  .app-header,
+  .sidebar-nav,
+  .main-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .module-container {
+    max-width: 100%;
+  }
+}

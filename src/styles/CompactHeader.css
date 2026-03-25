@@ -1,0 +1,122 @@
+/**
+ * COMPACT HEADER STYLES
+ * =====================
+ * Minimal header: 56px max height
+ */
+
+.compact-header {
+  height: 56px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  z-index: 90;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Menu Button */
+.header-menu-btn {
+  background: none;
+  border: none;
+  color: #00d4ff;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.header-menu-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.header-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* Branding */
+.header-brand {
+  margin-right: auto;
+}
+
+.header-brand h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Search Button */
+.header-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.header-search-btn:hover {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.search-hint {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .compact-header {
+    height: 52px;
+    padding: 0 0.75rem;
+  }
+
+  .header-content {
+    gap: 0.75rem;
+  }
+
+  .header-brand h1 {
+    font-size: 1rem;
+  }
+
+  .header-search-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-search-btn {
+    padding: 0.4rem;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .search-hint {
+    display: none;
+  }
+}

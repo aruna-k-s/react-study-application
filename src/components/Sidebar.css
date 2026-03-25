@@ -1,0 +1,376 @@
+/**
+ * SIDEBAR CSS
+ * ===========
+ * Styles for the sidebar navigation with search integration
+ */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 280px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  border-right: 1px solid #0f3460;
+  color: #eaeaea;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  overflow: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================================================== */
+/* SIDEBAR HEADER */
+/* ========================================================================== */
+
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(15, 52, 96, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-header .sidebar-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #00d4ff;
+}
+
+/* ========================================================================== */
+/* SEARCH CONTAINER */
+/* ========================================================================== */
+
+.sidebar-search-container {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(15, 52, 96, 0.3);
+  background: rgba(15, 52, 96, 0.1);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.sidebar-search-input {
+  flex: 1;
+  padding: 8px 12px 8px 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  color: #eaeaea;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-search-input::placeholder {
+  color: rgba(234, 234, 234, 0.6);
+}
+
+.sidebar-search-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.2);
+}
+
+.search-input-wrapper::before {
+  content: '🔍';
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: rgba(234, 234, 234, 0.6);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.clear-search-btn:hover {
+  color: #00d4ff;
+}
+
+.search-hint {
+  margin: 0;
+  padding: 4px 4px;
+  font-size: 11px;
+  color: rgba(0, 212, 255, 0.8);
+  font-weight: 500;
+}
+
+/* ========================================================================== */
+/* NAVIGATION MENU */
+/* ========================================================================== */
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================================================== */
+/* CATEGORY SECTION */
+/* ========================================================================== */
+
+.sidebar-category {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-category-toggle {
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  color: #00d4ff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-category-toggle:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00ffff;
+}
+
+.sidebar-category-toggle:active {
+  background: rgba(0, 212, 255, 0.15);
+}
+
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+  color: rgba(0, 212, 255, 0.7);
+}
+
+.toggle-icon.expanded {
+  transform: rotate(90deg);
+}
+
+.item-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: rgba(0, 212, 255, 0.5);
+  background: rgba(0, 212, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ========================================================================== */
+/* SIDEBAR ITEMS */
+/* ========================================================================== */
+
+.sidebar-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: background 0.15s ease;
+}
+
+.sidebar-item.nested {
+  border-left: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: rgba(234, 234, 234, 0.8);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.15s ease;
+  border-left: 2px solid transparent;
+}
+
+.sidebar-link:hover {
+  background: rgba(0, 212, 255, 0.08);
+  color: #00ffff;
+  border-left-color: #00d4ff;
+}
+
+.sidebar-link.active {
+  background: rgba(0, 212, 255, 0.15);
+  color: #00ffff;
+  border-left-color: #00d4ff;
+  font-weight: 500;
+}
+
+.sidebar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.sidebar-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ========================================================================== */
+/* CATEGORY ITEM (Non-clickable group) */
+/* ========================================================================== */
+
+.sidebar-category-item {
+  padding: 8px 12px;
+}
+
+.category-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 212, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* ========================================================================== */
+/* HIGHLIGHT MATCH STYLING */
+/* ========================================================================== */
+
+.highlight-match {
+  background: rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+  font-weight: 500;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* ========================================================================== */
+/* SIDEBAR FOOTER */
+/* ========================================================================== */
+
+.sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid rgba(15, 52, 96, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.version-info {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(0, 212, 255, 0.5);
+  text-align: center;
+}
+
+/* ========================================================================== */
+/* RESPONSIVE */
+/* ========================================================================== */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    border-right-width: 2px;
+  }
+
+  .sidebar-header {
+    padding: 12px;
+  }
+
+  .sidebar-header .sidebar-title {
+    font-size: 16px;
+  }
+}
+
+/* ========================================================================== */
+/* DARK MODE ADJUSTMENTS */
+/* ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background: linear-gradient(180deg, #0f0f1e 0%, #0d1829 100%);
+  }
+
+  .sidebar-link:hover,
+  .sidebar-link.active {
+    background: rgba(0, 212, 255, 0.2);
+  }
+}
+
+/* ========================================================================== */
+/* ANIMATION */
+/* ========================================================================== */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sidebar-item {
+  animation: slideIn 0.2s ease;
+}

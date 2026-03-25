@@ -1,0 +1,320 @@
+/**
+ * LIGHTHOUSE TAB LAYOUT STYLES
+ * ============================
+ * Tab-based interface with collapsible metric cards
+ */
+
+.lighthouse-tab-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tab Navigation */
+.lighthouse-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.1);
+  overflow-x: auto;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab-btn .tab-icon {
+  font-size: 1.1rem;
+}
+
+.tab-btn:hover {
+  color: #00d4ff;
+}
+
+.tab-btn.active {
+  color: #00d4ff;
+  border-bottom-color: #00d4ff;
+}
+
+/* Tab Content */
+.tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+/**
+ * METRIC CARD STYLES
+ * ==================
+ * Collapsible cards for individual metrics
+ */
+
+.metric-card {
+  background: #fff;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.08);
+}
+
+.metric-card.expanded {
+  grid-column: 1 / -1;
+}
+
+/* Metric Header */
+.metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.metric-header:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.04) 100%);
+}
+
+.metric-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.metric-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 1rem;
+}
+
+.metric-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 48px;
+}
+
+.metric-score.score-good {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.metric-score.score-moderate {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.metric-score.score-poor {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Toggle Button */
+.metric-toggle {
+  background: none;
+  border: none;
+  color: rgba(0, 212, 255, 0.6);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.metric-toggle:hover {
+  color: #00d4ff;
+}
+
+/* Metric Details */
+.metric-details {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.metric-details h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.metric-explanation p {
+  margin: 0;
+  line-height: 1.6;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+/* Thresholds */
+.metric-threshold {
+  background: rgba(0, 212, 255, 0.02);
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.threshold-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.threshold-label {
+  font-weight: 500;
+}
+
+.threshold-value {
+  color: #00d4ff;
+  font-family: monospace;
+}
+
+/* Fixes List */
+.fixes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fixes-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.fixes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Code Example */
+.metric-code pre {
+  margin: 0;
+  background: #1a1a2e;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .lighthouse-tabs {
+    gap: 0.25rem;
+  }
+
+  .tab-btn {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card.expanded {
+    grid-column: 1;
+  }
+
+  .lighthouse-tabs {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .tab-btn {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .metric-header {
+    padding: 0.875rem;
+  }
+
+  .metric-details {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .tab-btn {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .tab-btn .tab-icon {
+    font-size: 1rem;
+  }
+
+  .metric-score {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .metric-title {
+    gap: 0.75rem;
+  }
+
+  .metric-details {
+    padding: 1rem;
+  }
+}
