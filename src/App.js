@@ -58,6 +58,8 @@ import ProblemSolvingCriticalThinkingExample from './components/27-ProblemSolvin
 import RefactoringTechDebtExample from './components/28-RefactoringTechDebt';
 import AdvancedAsyncConcurrencyExample from './components/29-AdvancedAsyncConcurrency';
 import ScalableFrontendArchitectureExample from './components/30-ScalableFrontendArchitecture';
+import DSAMastery from './components/31-DSAMastery';
+import DSAComprehensiveCurriculum from './components/32-DSAComprehensiveCurriculum';
 import './App.css';
 
 function App() {
@@ -69,7 +71,8 @@ function App() {
     intermediate: true,
     advanced: true,
     enterprise: true,
-    staffEngineer: false
+    staffEngineer: false,
+    interviewPrep: false
   });
 
   // Organize topics by learning level
@@ -132,6 +135,14 @@ function App() {
         { id: 'techDebt', label: 'Refactoring & Tech Debt Management', component: RefactoringTechDebtExample },
         { id: 'asyncConcurrency', label: 'Advanced Async Patterns & Concurrency', component: AdvancedAsyncConcurrencyExample },
         { id: 'scalableArch', label: 'Scalable Frontend Architecture', component: ScalableFrontendArchitectureExample }
+      ]
+    },
+    interviewPrep: {
+      label: '🎯 Interview Preparation',
+      icon: '🎯',
+      topics: [
+        { id: 'dsa', label: 'DSA Mastery: Zero to FAANG-Ready', component: DSAMastery },
+        { id: 'dsaCurriculum', label: 'Comprehensive DSA Curriculum', component: DSAComprehensiveCurriculum }
       ]
     }
   };
