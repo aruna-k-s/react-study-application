@@ -4,9 +4,11 @@
   "description": "Comprehensive React Hooks and Core Concepts Educational Application",
   "private": true,
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.13.2"
+    "react-router-dom": "^7.13.2",
+    "uuid": "^13.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

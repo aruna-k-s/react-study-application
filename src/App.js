@@ -60,6 +60,7 @@ import AdvancedAsyncConcurrencyExample from './components/29-AdvancedAsyncConcur
 import ScalableFrontendArchitectureExample from './components/30-ScalableFrontendArchitecture';
 import DSAMastery from './components/31-DSAMastery';
 import DSAComprehensiveCurriculum from './components/32-DSAComprehensiveCurriculum';
+import CodingPlatform from './components/coding-platform/CodingPlatform';
 import './App.css';
 
 function App() {
@@ -141,6 +142,7 @@ function App() {
       label: '🎯 Interview Preparation',
       icon: '🎯',
       topics: [
+        { id: 'codingPractice', label: 'Coding Practice Platform', component: CodingPlatform },
         { id: 'dsa', label: 'DSA Mastery: Zero to FAANG-Ready', component: DSAMastery },
         { id: 'dsaCurriculum', label: 'Comprehensive DSA Curriculum', component: DSAComprehensiveCurriculum }
       ]
